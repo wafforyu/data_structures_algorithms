@@ -1,2 +1,2 @@
 # data_structures_algorithms
-Currently in progress.
+Currently in construction. 
