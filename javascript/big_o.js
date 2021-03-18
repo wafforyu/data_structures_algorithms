@@ -1,6 +1,5 @@
 var array = [5,4,3,2,1];
 
-
 //Big O of n, Linear time
 let x = 3;
 for (let i = 0; i < 9; i++) //O(n)
