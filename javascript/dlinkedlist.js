@@ -1,16 +1,12 @@
 //TO BE COMPLETED
-
-class LinkedList {
+class DoublyLinkedList {
   constructor(value) {
     this.head = {
       value: value,
-      next: null
+      next: null,
+      prev: null
     };
     this.tail = this.head;
     this.length = 1;
   }
-  append(value) {
-    //Code here
-  }
 }
-
