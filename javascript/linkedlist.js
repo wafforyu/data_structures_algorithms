@@ -9,8 +9,4 @@ class LinkedList {
     this.tail = this.head;
     this.length = 1;
   }
-  append(value) {
-    //Code here
-  }
 }
-
