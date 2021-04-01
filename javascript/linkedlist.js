@@ -9,4 +9,15 @@ class LinkedList {
     this.tail = this.head;
     this.length = 1;
   }
+    append(value) {
+    const newNode = {
+      value: value,
+      next: null
+    }
+    console.log(newNode)
+    this.tail.next = newNode;
+    this.tail = newNode;
+    this.length++;
+    return this;
+  }
 }
