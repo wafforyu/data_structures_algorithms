@@ -48,7 +48,6 @@ Rule 3: Different inputs should have different variables. O(a+b). A and B arrays
 O(a*b)
 
 + for steps in order
-
 * for nested steps
 
 
