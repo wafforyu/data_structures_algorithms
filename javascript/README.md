@@ -1,7 +1,6 @@
 # _datastructures_algorithms
 
 Big O Cheat Sheet:
-
 -Big Os 
 
 O(1) Constant- no loops
