@@ -1,71 +1,68 @@
-//IN PROGRESS
-//IN PROGRESS
-//IN PROGRESS
-//IN PROGRESS
-//IN PROGRESS
-function quickSort(array,start=0, end=array.length-1){
-  if (start < end){
-    let pivotIndex = pivotHelper(array, start, end);
-    quickSort(array, start, pivotIndex-1);
-    quickSort(array, pivotIndex+1, end);
+function quickSort(array, left, right){
+  let pivot;
+  let partitionIndex;
+  if(left < right) {
+    pivot = right;
+    partitionIndex = partition(array, pivot, left, right);
+    
+    //sort left and right
+    quickSort(array, left, partitionIndex - 1);
+    quickSort(array, partitionIndex + 1, right);
   }
   return array;
 }
+   
+function partition(array, pivot, left, right){
+  let pivotValue = array[pivot];
+  let partitionIndex = left;
 
-function pivotHelper(array, start=0, end=array.length+1){
-  let pivot = array[start];
-  let ctr = start;  
-  for(var i = start+1; i < end; i++ )
-    if(pivot > array[i]){
-      ctr++;
-      swap(array, start, i);
+  for(let i = left; i < right; i++) {
+    if(array[i] < pivotValue){
+      swap(array, i, partitionIndex);
+      partitionIndex++;
     }
-  swap(array, start, i);
-  return ctr;
+  }
+  swap(array, right, partitionIndex);
+  return partitionIndex;
 }
 
-function swap(array, start, i){
-  let temp = array[start];
-  array[start] = array[i];
-  array[i] = temp;
+function swap(array, firstIndex, secondIndex){
+    var temp = array[firstIndex];
+    array[firstIndex] = array[secondIndex];
+    array[secondIndex] = temp;
 }
 
-let array = [9,7,4,3,6,7,8];
+//Select first and last index as 2nd and 3rd parameters
+let numbers = [9,4,2,3,6,8,1,0,-4];
+quickSort(numbers, 0, numbers.length - 1);
+console.log(numbers);
 
-console.log(quickSort(array));
-//function quickSort(array, left, right){
-//  const len = array.length; 
-//  let pivot;
-//  let partitionIndex;
+//USING ARRAY METHODS
+//function quick_Sort(origArray) {
+//	if (origArray.length <= 1) { 
+//		return origArray;
+//	} else {
 //
-//  if(left < right) {
-//    pivot = right;
-//    partitionIndex = partition(array, pivot, left, right);
-//    
-//    //sort left and right
-//    quickSort(array, left, partitionIndex - 1);
-//    quickSort(array, partitionIndex + 1, right);
-//  }
-//  return array;
-//}
-//   
-//function partition(array, pivot, left, right){
-//  let pivotValue = array[pivot];
-//  let partitionIndex = left;
+//		var left = [];
+//		var right = [];
+//		var newArray = [];
+//		var pivot = origArray.pop();
+//		var length = origArray.length;
 //
-//  for(let i = left; i < right; i++) {
-//    if(array[i] < pivotValue){
-//      swap(array, i, partitionIndex);
-//      partitionIndex++;
-//    }
-//  }
-//  swap(array, right, partitionIndex);
-//  return partitionIndex;
+//		for (var i = 0; i < length; i++) {
+//			if (origArray[i] <= pivot) {
+//				left.push(origArray[i]);
+//			} else {
+//				right.push(origArray[i]);
+//			}
+//		}
+//
+//		return newArray.concat(quick_Sort(left), pivot, quick_Sort(right));
+//	}
 //}
 //
-//function swap(array, firstIndex, secondIndex){
-//    var temp = array[firstIndex];
-//    array[firstIndex] = array[secondIndex];
-//    array[secondIndex] = temp;
-//}
+//var myArray = [3, 0, 2, 5, -1, 4, 1 ];
 //
+//console.log("Original array: " + myArray);
+//var sortedArray = quick_Sort(myArray);
+//console.log("Sorted array: " + sortedArray);
