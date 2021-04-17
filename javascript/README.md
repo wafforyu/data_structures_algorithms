@@ -1,5 +1,7 @@
 # _datastructures_algorithms
 
+P.S I DID NOT WRITE MOST OF THE CODE IN THIS REPO
+
 Big O Cheat Sheet:
 -Big Os 
 
