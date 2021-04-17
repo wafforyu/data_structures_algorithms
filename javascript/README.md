@@ -1,6 +1,6 @@
 # _datastructures_algorithms
 
-P.S I DID NOT WRITE MOST OF THE CODE IN THIS REPO
+P.S THE ONLY OG CODE IN THIS REPO ARE IN THE PRACTICE FOLDERS
 
 Big O Cheat Sheet:
 -Big Os 
