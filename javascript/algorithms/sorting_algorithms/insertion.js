@@ -1,15 +1,28 @@
+/**
+ * insertion sort will shift the elements forward
+ * and insert the pointed element in it's correct position
+ */
 function inserstionSort(arr){
+  // start from index 1
   for(var i = 1; i < arr.length;i++){
+    //crr is the pointed element or the current element being compared
+    //the pointed element is always on arr[i]
      var crr = arr[i];
+     //initialize j to be i-1 and loop while it is >= 0
+     //arr[j] > crr means that the current element is less than arr[j] element
+     //while arr[j] > crr then shift arr[j] to arr[j+1]
      for(var j = i-1; j >= 0 && arr[j] > crr; j-- ){
       arr[j+1] = arr[j];
      }
+     //if arr[j] < crr then the for loop will break 
+     //finally insert the current element into the last position
      arr[j+1] = crr;
   }
   return arr
 }
 
 console.log(inserstionSort([6,4,2,1,4,6,-4,7]));
+
 //function insertionSort(array) {
 //  const length = array.length;
 //	for (let i = 0; i < length; i++) {
