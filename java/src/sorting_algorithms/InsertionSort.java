@@ -1,9 +1,7 @@
 package sorting_algorithms;
-
 import java.util.Arrays;
 
 public class InsertionSort {
-    
     public static int[] insertionSort(int[] list){
         int i, j, key, temp;
 

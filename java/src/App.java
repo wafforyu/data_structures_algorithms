@@ -1,14 +1,15 @@
-import sorting_algorithms.BubbleSort;
-import sorting_algorithms.InsertionSort;
-import sorting_algorithms.SelectionSort;
-import java.util.Arrays;
+import data_structures.*;
 
 public class App {
     public static void main(String[] args) {
-        int[] n = {5,4,2,3,6,7};
+        int[] n = {4,12,-2,3,1,5,8};
 
-        System.out.println(Arrays.toString(BubbleSort.bubbleSort(n)));
-        System.out.println(Arrays.toString(InsertionSort.insertionSort(n)));
-        System.out.println(Arrays.toString(SelectionSort.selectionSort(n)));
+        Array.traverse(n);
+        n = Array.remove(n,3);
+        System.out.println();
+        Array.traverse(n);
+        n = Array.remove(n, 2);
+        System.out.println();
+        Array.traverse(n);
     }
 }
