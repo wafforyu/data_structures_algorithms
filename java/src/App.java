@@ -1,8 +1,8 @@
 import sorting_algorithms.BubbleSort;
 import sorting_algorithms.InsertionSort;
 import sorting_algorithms.SelectionSort;
-
 import java.util.Arrays;
+
 public class App {
     public static void main(String[] args) {
         int[] n = {5,4,2,3,6,7};
