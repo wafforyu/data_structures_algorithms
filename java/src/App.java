@@ -11,5 +11,10 @@ public class App {
         n = Array.remove(n, 2);
         System.out.println();
         Array.traverse(n);
+        n = Array.append(n, 99);
+        System.out.println();
+        Array.traverse(n);
+        System.out.println();
+        System.out.println(Array.linearSearch(n, 63));
     }
 }
