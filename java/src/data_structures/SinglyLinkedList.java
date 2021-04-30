@@ -5,7 +5,7 @@ public class SinglyLinkedList{
      public class Node{ //Inner class
         byte data;
         public Node next;
-        Node (byte d){ //Node constructor
+        public Node (byte d){ //Node constructor
             data = d;
             next = null; }
     }
@@ -48,5 +48,16 @@ public class SinglyLinkedList{
         Node last = head; //find last node by traversing from the head
         while (last.next != null) last = last.next; //while last pointer is not null---traverse
         last.next = new_node; //change last pointer to new node;
+    }
+
+    //O(n) DELETE
+    public void deleteNode(byte position){
+         if (head == null) return; // check if the list is empty
+         Node temp = head; // set temp (finder pointer) to head
+         if (position == 0){ head = temp.next; return;} // change head to temp node
+         for (int i = 0; temp != null && i < position-1; i++) temp = temp.next; // find previous node of the deleted node
+         if (temp == null || temp.next == null) return; // if the end is reached
+        Node next = temp.next.next; //temp.next will be deleted
+        temp.next = next; //point the pointer to the next node of the deleted node
     }
 }

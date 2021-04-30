@@ -1,12 +1,9 @@
-import data_structures.*;
-
-import java.util.LinkedList;
+import data_structures.SinglyLinkedList;
 
 public class App {
     public static void main(String[] args) {
-        int[] n = {4,12,-2,3,1,5,8};
-
         //ARRAY
+//        int[] n = {4,12,-2,3,1,5,8};
 //        Array.traverse(n);
 //        n = Array.remove(n,3);
 //        System.out.println();
@@ -29,6 +26,10 @@ public class App {
         nList.insertAfter(nList.head.next, (byte)0);
         nList.insertAfter(nList.head.next.next.next, (byte)0);
         nList.push((byte) 0);
+        nList.traverse();
+
+        System.out.println();
+        nList.deleteNode((byte) 1);
         nList.traverse();
     }
 }
