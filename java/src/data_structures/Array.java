@@ -1,5 +1,7 @@
 package data_structures;
 
+//THESE ARE JUST ARRAY FUNCTIONS
+//STILL UNDER CONSTRUCTION
 public class Array {
     public static int[] append(int[] arr, int element){
         int[] newArr = new int[arr.length+1];
