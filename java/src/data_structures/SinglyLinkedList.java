@@ -1,6 +1,6 @@
 package data_structures;
 
-public class LinkedList {
+public class SinglyLinkedList{
     public Node head; // head
      public class Node{ //Inner class
         byte data;

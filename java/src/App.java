@@ -1,5 +1,7 @@
 import data_structures.*;
 
+import java.util.LinkedList;
+
 public class App {
     public static void main(String[] args) {
         int[] n = {4,12,-2,3,1,5,8};
@@ -19,7 +21,7 @@ public class App {
 //        System.out.println(Array.linearSearch(n, 63));
 
        //LINKED LIST
-       LinkedList nList = new LinkedList();
+       SinglyLinkedList nList = new SinglyLinkedList();
         nList.append((byte) 8);
         nList.append((byte) 8);
         nList.append((byte) 8);
