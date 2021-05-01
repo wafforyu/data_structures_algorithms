@@ -29,7 +29,7 @@ public class App {
         nList.traverse();
 
         System.out.println();
-        nList.deleteNode((byte) 1);
+        nList.deleteNode((byte) 6);
         nList.traverse();
     }
 }

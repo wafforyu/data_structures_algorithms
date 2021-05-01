@@ -2,7 +2,7 @@ package data_structures;
 
 public class SinglyLinkedList{
     public Node head; // head
-     public class Node{ //Inner class
+     public static class Node{ //Inner class
         byte data;
         public Node next;
         public Node (byte d){ //Node constructor
@@ -13,10 +13,9 @@ public class SinglyLinkedList{
     //O(n) TRAVERSE
     public void traverse(){
          Node temp = head;
-         do{
+         while(temp != null){
              System.out.print(temp.data + " -> ");
-             temp = temp.next;
-         }while(temp != null);
+             temp = temp.next; }
     }
 
     //O(1) PUSH
@@ -26,7 +25,7 @@ public class SinglyLinkedList{
         head = new_node; //move head to new node
     }
 
-    //O(n) INSERT
+    //O(1) INSERT
     public void insertAfter(Node prev_node, byte new_data){
          if (prev_node == null){ //check if previous node exists
              System.out.println("Previous node is null");
@@ -54,10 +53,21 @@ public class SinglyLinkedList{
     public void deleteNode(byte position){
          if (head == null) return; // check if the list is empty
          Node temp = head; // set temp (finder pointer) to head
-         if (position == 0){ head = temp.next; return;} // change head to temp node
+         if (position == 0){ head = temp.next; return;} // change head to temp node to delete head
          for (int i = 0; temp != null && i < position-1; i++) temp = temp.next; // find previous node of the deleted node
-         if (temp == null || temp.next == null) return; // if the end is reached
-        Node next = temp.next.next; //temp.next will be deleted
-        temp.next = next; //point the pointer to the next node of the deleted node
+         if (temp == null || temp.next == null) return; // if the  is reached
+        //Node next = temp.next.next; //temp.next will be deleted
+        temp.next = temp.next.next; //point the pointer to the next node of the deleted node
     }
+
+/*
+    NO HEAD DELETION
+    public void delete(byte position){
+         Node temp = head;
+         for (int i = 0; temp != null && i < position-1; i++) {temp = temp.next;}
+         if (temp == null || temp.next == null){ return;}
+
+         temp.next = temp.next.next;
+    }
+*/
 }
