@@ -1,5 +1,6 @@
 package data_structures;
 
+
 //THESE ARE JUST ARRAY FUNCTIONS
 //STILL UNDER CONSTRUCTION
 public class Array {

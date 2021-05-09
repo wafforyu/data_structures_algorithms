@@ -36,7 +36,7 @@ public class SinglyLinkedList{
          prev_node.next = new_node; //set previous node point to new node
     }
 
-    //O(n) APPEND
+    //O(1) APPEND
     public void append(byte new_data){
         Node new_node = new Node(new_data); //create new node with new data
         if (head == null){ //check if linkedList is empty
@@ -70,4 +70,18 @@ public class SinglyLinkedList{
          temp.next = temp.next.next;
     }
 */
+
+//    public Node reverse(Node node) {
+//            Node prev = null;
+//            Node current = node;
+//            Node next = null;
+//            while (current != null) {
+//                next = current.next;
+//                current.next = prev;
+//                prev = current;
+//                current = next;
+//            }
+//            node = prev;
+//            return node;
+//    }
 }

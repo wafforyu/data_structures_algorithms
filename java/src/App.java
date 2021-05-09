@@ -2,34 +2,12 @@ import data_structures.SinglyLinkedList;
 
 public class App {
     public static void main(String[] args) {
-        //ARRAY
-//        int[] n = {4,12,-2,3,1,5,8};
-//        Array.traverse(n);
-//        n = Array.remove(n,3);
-//        System.out.println();
-//        Array.traverse(n);
-//        n = Array.remove(n, 2);
-//        System.out.println();
-//        Array.traverse(n);
-//        n = Array.append(n, 99);
-//        System.out.println();
-//        Array.traverse(n);
-//        System.out.println();
-//        System.out.println(Array.linearSearch(n, 63));
 
-       //LINKED LIST
-       SinglyLinkedList nList = new SinglyLinkedList();
-        nList.append((byte) 8);
-        nList.append((byte) 8);
-        nList.append((byte) 8);
-        nList.append((byte) 8);
-        nList.insertAfter(nList.head.next, (byte)0);
-        nList.insertAfter(nList.head.next.next.next, (byte)0);
-        nList.push((byte) 0);
-        nList.traverse();
-
-        System.out.println();
-        nList.deleteNode((byte) 6);
-        nList.traverse();
+        SinglyLinkedList a = new SinglyLinkedList();
+        a.append((byte)1);
+        a.append((byte)2);
+        a.append((byte)3);
+        a.append((byte)4);
+        a.traverse();
     }
 }
