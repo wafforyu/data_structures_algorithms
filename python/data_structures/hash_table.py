@@ -1,7 +1,7 @@
 class HashTable:
     def __init__(self, size):
         self.size = size
-        self.data = [None] * self.size
+        self.data = [[]] * self.size
 
     def set(self, key, value):
         address = hash(key) % self.size
@@ -18,8 +18,3 @@ class HashTable:
                 if curr_bucket[i][0] == key:
                     return curr_bucket[i][1]
         return None
-
-
-a = HashTable(5)
-a.set('grapes', 1000)
-print(a.get('grapes'))
