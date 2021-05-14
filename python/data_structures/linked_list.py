@@ -43,6 +43,7 @@ class SinglyLinkedList:
         # change the next of last node
         last.next = new_node
 
+    # remove elements, ADD CHECKERS FOR EMPTY LIST OR SOME OTHER CASES
     def remove(self, position):
         temp = self.head
         j = 0
