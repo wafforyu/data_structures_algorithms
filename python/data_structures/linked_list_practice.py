@@ -16,18 +16,37 @@ class SinglyLinkedList:
         self.head = new_node  # make the new node new head
 
     def insertAfter(self, position, new_data):  # take position and new data
+        new_node = Node(new_data)  # create the new node
+        if self.head is None:
+            self.head = new_node
+            return
         temp = self.head  # set temp as head to start from the beginning of the list
         k = 0
         while k < position:  # loop through until the position has been reached
             k += 1
             temp = temp.next  # this will allow you to move up the list
-        new_node = Node(new_data)  # create the new node
         new_node.next = temp.next
         temp.next = new_node
+
+    def append(self, new_data):
+        new_node = Node(new_data)
+        # if list is empty, set new_node as head
+        if self.head is None:
+            self.head = new_node
+            return
+
+        # else traverse till the last node
+        last = self.head
+        while last.next:
+            last = last.next
+
+        # change the next of last node
+        last.next = new_node
 
     def remove(self, position):
         temp = self.head
         j = 0
+
         while j < position - 1 and temp.next is not None:  # while previous of target position is not reached
             temp = temp.next  # and next node is not None
             j += 1  # move temp forward
