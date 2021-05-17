@@ -1,48 +1,70 @@
 package sorting_algorithms;
+
 import java.util.Arrays;
 
 public class MergeSort {
-    static void merge(int arr[], int l, int m, int r) {
-        int L[] = new int[m-l+1];
-        int R[] = new int[r-m];
+    private static void merge(int[] arr, int low, int mid, int high) {
+        // create temporary arrays
+        int[] leftArray = new int[mid - low + 1];
+        int[] rightArray = new int[high - mid];
 
-        for (int i = 0; i < L.length; ++i) L[i] = arr[l + i];
-        for (int j = 0; j < R.length; ++j) R[j] = arr[m + 1 + j];
+        // copy the elements in to create sub array
 
-        int i = 0, j = 0, k = l;
+        // copy for the left sub-array
+        for (int i = 0; i < leftArray.length; i++)
+            leftArray[i] = arr[low + i];
 
-        while (i < L.length && j < R.length) {
-            if (L[i] <= R[j]) {
-                arr[k] = L[i];
-                i++; }
-            else {
-                arr[k] = R[j];
-                j++; }
+        // copy for the right sub-array
+        for (int j = 0; j < rightArray.length; j++)
+            rightArray[j] = arr[mid + j + 1];
+
+        // now merge and sort the sub-arrays into the main-array
+        int i = 0, j = 0, k = low;
+        while (i < leftArray.length && j < rightArray.length) {
+            if (leftArray[i] <= rightArray[j]) {
+                arr[k] = leftArray[i];
+                i++;
+            } else {
+                arr[k] = rightArray[j];
+                j++;
+            }
             k++;
         }
 
-        while (i < L.length) {
-            arr[k] = L[i];
+        // to make sure none of the elements are missed out
+        // for the left array
+        while (i < leftArray.length) {
+            arr[k] = leftArray[i];
             i++;
-            k++; }
-        while (j < R.length) {
-            arr[k] = R[j];
+            k++;
+        }
+        // for the right array
+        while (j < rightArray.length) {
+            arr[k] = rightArray[j];
             j++;
-            k++; }
+            k++;
+        }
     }
 
-    static void sort(int arr[], int l, int r) {
-        if (l < r) {
-            int m =(l+r)/2;
-            sort(arr, l, m);
-            sort(arr, m + 1, r);
-            merge(arr, l, m, r); }
+    static void mergeSort(int[] arr, int low, int high) {
+        // base case, when the two pointers meet
+        if (low < high) {
+            // find the middle of the array
+            int mid = (low + high) / 2;
+
+            // pass in the left partition
+            mergeSort(arr, low, mid);
+            // pass in the right partition
+            mergeSort(arr, mid + 1, high);
+            // merge the both sorted partitions
+            merge(arr, low, mid, high);
+        }
     }
 
-    public static void main(String args[]) {
-        int arr[] = { 12, 11, 13, 5, 6, 7 ,3,1,12,312,3,124,23,545,63,457,56,745,654,12,312,31,23,124,234,0};
+    public static void main(String... args) {
+        int[] arr = {5,4,3,2,1,0,5,6,8,10,2,12,31,45,56,87,12,98,76,54,33};
         System.out.println(Arrays.toString(arr));
-        sort(arr, 0, arr.length - 1);
+        mergeSort(arr, 0, arr.length - 1);
         System.out.println(Arrays.toString(arr));
     }
 }
