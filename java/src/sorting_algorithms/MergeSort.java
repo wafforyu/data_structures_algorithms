@@ -54,17 +54,10 @@ public class MergeSort {
 
             // pass in the left partition
             mergeSort(arr, low, mid);
-            // pass in the right partition
-            mergeSort(arr, mid + 1, high);
+            // pass in the right partition            mergeSort(arr, mid + 1, high);
             // merge the both sorted partitions
             merge(arr, low, mid, high);
         }
     }
 
-    public static void main(String... args) {
-        int[] arr = {5,4,3,2,1,0,5,6,8,10,2,12,31,45,56,87,12,98,76,54,33};
-        System.out.println(Arrays.toString(arr));
-        mergeSort(arr, 0, arr.length - 1);
-        System.out.println(Arrays.toString(arr));
-    }
 }
