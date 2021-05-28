@@ -2,7 +2,7 @@
 // Java program to insert element in binary tree
 import java.util.LinkedList;
 import java.util.Queue;
-public class GFG {
+public class BinaryTree2 {
  
     /* A binary tree node has key, pointer to
     left child and a pointer to right child */
